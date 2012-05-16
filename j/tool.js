@@ -2,8 +2,7 @@ var map = new Array();
 var current = {};
 var open = -1;
 
-var TYPS = 2;
-// <========== TRANSLATIONS NUMBER =========|
+var TYPS = 2;				// <========== TRANSLATIONS NUMBER =========|
 var symbol;
 
 function init() {
@@ -86,9 +85,9 @@ function save() {
 
 	for( i = 0; i < TYPS; i++)
 		current.typ[i] = $H$("in-typ" + i).val();
-	current.mag = $H$("in-mag").val();
-	current.sym = $H$("in-sym").val();
-	current.fac = Number($H$("in-fac").val());
+		current.mag = $H$("in-mag").val();
+		current.sym = $H$("in-sym").val();
+		current.fac = $H$("in-fac").val();
 
 	if(open == -1) {
 		map.push(current);
