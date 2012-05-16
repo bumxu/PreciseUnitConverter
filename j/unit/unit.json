@@ -556,7 +556,7 @@
 		"fac": 1
 	}, {
 		"typ": ["cubic centimetre", "centimetro cúbico"],
-		"sym": "cm&sup3;",
+		"sym": "cm³",
 		"mag": "volume",
 		"fac": 0.001
 	}, {

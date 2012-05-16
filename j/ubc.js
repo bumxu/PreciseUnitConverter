@@ -22,7 +22,7 @@ function init(){
 		});
 	});
 	
-	$.getJSON('j/unit.json', function(data) {
+	$.getJSON('j/unit/unit.json', function(data) {
 		fx = data;
 		curr_a = fx[0];
 		curr_b = fx[0];
