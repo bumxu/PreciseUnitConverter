@@ -2,11 +2,13 @@ var map = new Array();
 var current = {};
 var open = -1;
 
-var TYPS = 2;				// <========== TRANSLATIONS NUMBER =========|
+var TYPS = 2;
+// <========== TRANSLATIONS NUMBER =========|
 var symbol;
 
 function init() {
-	$.getJSON('j/unit/unit.json', function(data) {
+	$.getJSON('j/unit/unit.json?c=' + (new Date().getTime()), function(data) {
+		
 		for( i = 0; i < data.length; i++) {
 			map.push({
 				"typ" : [(data[i].typ[0] || "N/C"), (data[i].typ[1] || "N/C")], //FIXME
@@ -29,7 +31,10 @@ function list() {
 			$("<div/>").attr("id", "MAG" + map[i].mag).appendTo("#unitlist");
 			$("<div/>").addClass('c').html(map[i].mag).appendTo("#unitlist #MAG" + map[i].mag);
 		}
-		$("<div/>").addClass('e').attr("onclick", "pick(" + i + ")").html(map[i].typ[0] + " (" + map[i].sym + ")").appendTo("#unitlist #MAG" + map[i].mag);
+		$("<div/>").addClass('e').attr({
+			"onclick" : "pick(" + i + ")",
+			"data-dest" : i
+		}).html(map[i].typ[0] + " (" + map[i].sym + ")").appendTo("#unitlist #MAG" + map[i].mag);
 	}
 }
 
@@ -85,9 +90,9 @@ function save() {
 
 	for( i = 0; i < TYPS; i++)
 		current.typ[i] = $H$("in-typ" + i).val();
-		current.mag = $H$("in-mag").val();
-		current.sym = $H$("in-sym").val();
-		current.fac = $H$("in-fac").val();
+	current.mag = $H$("in-mag").val();
+	current.sym = $H$("in-sym").val();
+	current.fac = $H$("in-fac").val();
 
 	if(open == -1) {
 		map.push(current);
@@ -105,13 +110,49 @@ function save() {
 function exp() {
 	$("#unitedit").html("");
 	s = $("<div/>").attr('id', 'info').addClass('i-w-box').html("Calling php<br><br>Wait! Trying to save on file...").appendTo("#unitedit");
-	$.post('l/save.php', {map: $.toJSON(map)}, function(response) {
+	$.post('l/save.php', {
+		map : $.toJSON(map),
+		alt : alt()
+	}, function(response) {
 		if(response == "ok") {
 			$(s).html("Success to save");
 		} else {
 			$(s).html(response);
 		}
 	});
+}
+
+var alternative = "{\n";
+
+function alt() {
+	families = $H$("unitlist").children("div");
+	for( i = 0; i < families.length; i++) {
+		family = families[i].id.substring(3);
+		alternative += "\"" + family + "\":[";
+		elements = $H$("MAG"+family).children(".e");
+
+		for( j = 0; j < elements.length; j++){
+			dest = $(elements[j]).attr("data-dest");
+			
+			alternative += "\n\t\t{";
+			
+			alternative += "\"t\":[\"" + map[dest].typ[0] + "\",\"" + map[dest].typ[1] + "\"],";
+			alternative += "\"s\":\"" + map[dest].sym + "\",";
+			alternative += "\"f\":\"" + map[dest].fac + "\"";
+		
+			alternative += "}";
+			if(j < elements.length - 1)
+				alternative += ",";
+		}
+		alternative += "\n\t]";
+		if(i < families.length - 1)
+			alternative += ",";
+
+	}
+
+	alternative += '}';
+
+	return alternative;
 }
 
 $H$ = function(objID) {

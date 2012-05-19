@@ -1,12 +1,20 @@
 {
-	"subtitle": "A unit conversion quick and fast!",
+	"subtitle": "Converts units quickly and agile!",
 	"input": "Amount to convert:",
 	"output": "Result:",
+	"nosuggs": "Any coincidence",
 	"language": "Language",
 	"tutorial": "Tutorial",
-	"video": "View video demo",
-	"visit": "Tour",
+		"video": "View video demo",
+		"visit": "Tour",
 	"regulations": "Regulations",
+	"bugs": "Report bugs",
 	"about": "About",
-	"donate": "Donate"
+	"donate": "Donate",
+		"donatetitle": "Help the project and become a hero to me! ツ",
+		"donateqlabel": "Of course, you choose the amount:",
+		"donatebot": "Continue",
+		"donateifpre": "Donating it's the difference, let me know that we both win, that I must continue making efforts to do what I do, makes me happy and makes you happy, for it, you should donate.",
+		"donateifpos": "· Help a student in a country where politicians are using scissors to think.<br>· Feel like you’re doing some good in the world.<br>· Money to a good cause; helps me, helps the Precise Unit Converter and the future.<br>· I'll be eternally grateful, motivated, and you could receive some gift.<br>",
+	"soon": "More, soon..."
 }

@@ -1,2 +1,6 @@
 .project
 google_chrome
+.htaccess
+404.html
+available.off
+j/unit/unit*

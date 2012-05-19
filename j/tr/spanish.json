@@ -1,12 +1,20 @@
 {
-	"subtitle": "Una conversión de unidades rápida y veloz!",
+	"subtitle": "Convierte unidades de forma rápida y ágil!",
 	"input": "Cantidad a convertir:",
 	"output": "Resultado:",
+	"nosuggs": "Ninguna coincidencia",
 	"language": "Idioma",
 	"tutorial": "Tutorial",
 		"video": "Video demostrativo",
 		"visit": "Visita guiada",
 	"regulations": "Normativas",
+	"bugs": "Reportar bugs",
 	"about": "Acerca de",
-	"donate": "Donar"
+	"donate": "Donar",
+		"donatetitle": "Ayuda al proyecto y se un heroe para mí! ツ",
+		"donateqlabel": "Por supuesto, tu eliges la cantidad:",
+		"donatebot": "Continuar",
+		"donateifpre": "Donar marca la diferencia, me hace saber que ambos ganamos, que debo continuar haciendo lo que hago, me hace feliz y te hace feliz, por ello, deberías donar.",
+		"donateifpos": "· Ayuda a un estudiante en un pais donde los políticos están usando tijeras para pensar.<br>· Siéntete como si hicieras algo bueno por el mundo.<br>· Es dinero por una buena causa; me ayudas, ayudas a Precise Unit Converter y a lo que venga.<br>· Te estaré eternamente agradecido, motivado, y podrías recibir algún regalito.<br>",
+	"soon": "Más, muy pronto..."
 }

@@ -1,23 +1,46 @@
+/******************   FIREFOX   *****************************************************/
+@font-face {
+	font-family: 'AveriaSansLibreRegular';
+	src: url('averia.eot');
+	src: url('averia.eot?#iefix') format('embedded-opentype'),
+		url('averia.woff') format('woff'),
+		url('averia.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+/***********************************************************************************/
 #corner {
 	font-size: 18px;
 }
 #titulo {
-	top: 15%;
-	margin-top: 5px;
-	left: 4%;
-	margin-left: 30px;
+	top: 45%;
+	left: 52%;
 	position: absolute;
 	font-size: 32px;
-	color: rgba(255,255,255,0.9);
+	color: rgba(255,255,255,0.7);
 }
 #subtitulo {
-	top: 15%;
-	margin-top: 42px;
-	left: 4%;
+	top: 45%;
+	margin-top: 12px;
+	text-align: right;
+	right: 52%;
 	margin-left: 30px;
 	position: absolute;
 	font-size: 18px;
-	color: rgba(255,255,255,0.6);
+	color: rgba(255,255,255,0.5);
+}
+#subtitulo.no{
+	display: none;
+}
+#subline {
+	top: 45%;
+	margin-top: 42px;
+	left: 50%;
+	width: 0%;
+	position: absolute;
+	height: 2px;
+	background: rgba(255,255,255,0.2);
+	box-shadow: 0 0 8px rgba(255,255,255,0.4);
 }
 .opt {
 	position: absolute;
@@ -35,6 +58,7 @@
 	position: absolute;
 	font-size: 20px;
 	color: rgba(255,255,255,0.7);
+	display: none;
 }
 #input {
 	position: absolute;
@@ -52,6 +76,7 @@
 	resize: none;
 	background-image: url(../g/pencil.png);
 	background-position: right bottom;
+	display: none;
 }
 #origin {
 	position: absolute;
@@ -69,6 +94,7 @@
 	z-index: 4;
 	background-image: url(../g/plus.png);
 	background-position: right;
+	display: none;
 }
 #origin-sugg {
 	position: absolute;
@@ -106,6 +132,7 @@
 	z-index: 4;
 	background-image: url(../g/plus.png);
 	background-position: right;
+	display: none;
 }
 #destination-sugg {
 	position: absolute;
@@ -152,6 +179,7 @@
 	position: absolute;
 	font-size: 20px;
 	color: rgba(255,255,255,0.7);
+	display: none;
 }
 #output {
 	position: absolute;
@@ -168,6 +196,7 @@
 	border: 0;
 	resize: none;
 	background: rgba(255, 255, 255, 0.4);
+	display: none;
 }
 #advert {
 	right: 0;
@@ -176,7 +205,7 @@
 	position: absolute;
 	text-align: center;
 	background: rgba(0, 0, 0, 0.7);
-	padding: 8px 0;
+	padding: 14px 0 10px 0;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
 #arrow {
@@ -188,14 +217,26 @@
 	left: 50%;
 	margin-left: -18px;
 	background-image: url(../g/arrow.png);
+	display: none;
 }
 #content-abs {
 	min-height: 420px;
 }
 
+#mascara{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 99;
+	background: rgba(0,0,0,0.2);
+	display: none;
+}
+
 #lang-box{
 	position: absolute;
-	top: 12%;
+	top: 16%;
 	padding: 15px;
 	left: 50%;
 	width: 160px;
@@ -222,7 +263,7 @@
 
 #tutorial-box{
 	position: absolute;
-	top: 12%;
+	top: 16%;
 	padding: 15px;
 	left: 50%;
 	width: 200px;
@@ -245,4 +286,132 @@
 }
 #tutorial-box li:hover{
 	background: rgba(255,255,255,0.3);
+}
+
+#about-box{
+	position: absolute;
+	top: 16%;
+	left: 50%;
+	width: 500px;
+	height: 148px;
+	margin-left: -250px;
+	background: rgba(0,0,0,0.6);
+	z-index: 100;
+	display: none;
+}
+#about-box #about-image{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 128px;
+	height: 128px;
+	background: url(../g/logo.png);
+}
+#about-box #about-title{
+	position: absolute;
+	top: 25px;
+	font-size: 22px;
+	right: 25px;
+	text-align: right;
+}
+#about-box #about-details{
+	position: absolute;
+	bottom: 20px;
+	font-size: 15px;
+	right: 25px;
+	text-align: right;
+}
+
+#donate-box{
+	position: absolute;
+	top: 16%;
+	left: 50%;
+	width: 720px;
+	height: 300px;
+	margin-left: -360px;
+	background: rgba(0,0,0,0.6);
+	z-index: 100;
+	display: none;
+}
+#donate-box #donate-image{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 128px;
+	height: 128px;
+	background: url(../g/donate.png);
+}
+#donate-box #donate-title{
+	position: absolute;
+	top: 25px;
+	font-size: 25px;
+	left: 150px;
+	text-align: right;
+}
+#donate-box #donate-qlab{
+	position: absolute;
+	top: 70px;
+	font-size: 16px;
+	left: 180px;
+	text-align: left;
+}
+#donate-box #donate-bar{
+	position: absolute;
+	top: 105px;
+	left: 190px;
+	height: 10px;
+	width: 212px;
+	display: block;
+	padding: 0 2px;
+	background: rgba(255,255,255,0.3);
+	border-radius: 1px;
+}
+#donate-box #donate-slider{
+	position: absolute;
+	top: 100px;
+	left: 212px;
+	height: 20px;
+	width: 12px;
+	display: block;
+}
+#donate-box #amount{
+	position: absolute;
+	top: 82px;
+	font-size: 18px;
+	left: 460px;
+	height: 30px;
+	line-height: 30px;
+	border: 0;
+	width: 32px;
+	padding: 0 10px;
+	display: block;
+}
+#donate-box #donate-bot{
+	position: absolute;
+	top: 82px;
+	font-size: 16px;
+	height: 30px;
+	line-height: 30px;
+	border: 0;
+	left: 522px;
+	padding: 0 30px 0 14px;
+	background-image: url(../g/mark.png);
+	background-position: right;
+	display: block;
+}
+#donate-box #donate-ifpre{
+	position: absolute;
+	top: 148px;
+	font-size: 16px;
+	right: 30px;
+	left: 30px;
+	text-align: left;
+}
+#donate-box #donate-ifpos{
+	position: absolute;
+	top: 204px;
+	font-size: 14px;
+	right: 30px;
+	left: 50px;
+	text-align: left;
 }
