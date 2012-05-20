@@ -1,4 +1,3 @@
-
 var ubc = function(options){
 	var units;				// Here live the units!
 	
@@ -22,9 +21,15 @@ var ubc = function(options){
 	var money =     ["USD", "EUR"];
 	
 	
+	/*   Hi!   */
+	
+	console.log("\nPrecise Unit Converter 0.9.15\nCopyright © 2012 Bumxu\nBy Juande Martos\n");
+	
+	
 	/*   Amazing start animation   */
 	
-	var initialBar = function(){
+	var initialBar = function(debug){
+		console.log(debug);
 		loaded++;
 		
 		switch(loaded){
@@ -56,12 +61,11 @@ var ubc = function(options){
 	
 	var reset = function(){
 		if(firstReset)
-			initialBar();
+			initialBar("Loading...");
 
 		// Prepares data struct
 		$.getJSON('j/unit/alt.json', function(data) {
 			units = data;
-	
 			if(localStorage.unitBeast != null && localStorage.unitBeast.substring(0, 1) == "{")
 				local = $.evalJSON(localStorage.unitBeast);
 			else {
@@ -89,7 +93,7 @@ var ubc = function(options){
 			calculate();
 			
 			if(firstReset)
-				initialBar();
+				initialBar("Units loaded...");
 				
 			// Translates interface
 			$.getJSON('j/tr/' + languages[language] + '.json', function(data) {
@@ -103,7 +107,7 @@ var ubc = function(options){
 				$("#donate-currency").val(money[language]);
 				
 				if(firstReset)
-					initialBar();
+					initialBar("Translations loaded...");
 			});
 			
 			// Donate scrollbar
@@ -115,7 +119,7 @@ var ubc = function(options){
 		}); 
 	}
 	reset();
-	this.reset = reset();
+	this.reset = reset;
 	
 	/*   Aux Functions   */
 	
@@ -226,7 +230,7 @@ var ubc = function(options){
 				$(".boxx").fadeOut(200);
 			}
 	}
-	this.hideBoxes = hideBoxes();
+	this.hideBoxes = hideBoxes;
 	
 	$("#mascara").click(hideBoxes);
 	
@@ -429,7 +433,7 @@ var ubc = function(options){
 			// 1.
 			if(A.f.indexOf("%") > -1){
 				operator = A.f.split("|")[0].replace(/%/g, "BN").replace(/\.a\(/g, ".add(").replace(/\.s\(/g, ".subtract(").replace(/\.m\(/g, ".multiply(").replace(/\.d\(/g, ".divide(").replace(/\.n\(/g, ".negate(");
-				console.log(operator);
+				//console.log(operator);   <---debug
 				eval("BN = " + operator);
 			}else{
 				BN = BN.multiply(A.f);
@@ -438,7 +442,7 @@ var ubc = function(options){
 			// 2.
 			if(B.f.indexOf("%") > -1){
 				operator = B.f.split("|")[1].replace(/%/g, "BN").replace(/\.a\(/g, ".add(").replace(/\.s\(/g, ".subtract(").replace(/\.m\(/g, ".multiply(").replace(/\.d\(/g, ".divide(").replace(/\.n\(/g, ".negate(");
-				console.log(operator);
+				//console.log(operator);   <---debug
 				eval("BN = " + operator);
 			}else{
 				BN = BN.divide(B.f);
@@ -448,6 +452,7 @@ var ubc = function(options){
 		}else{
 			// Automatic process
 			O = I.multiply(unzip(A.f)).divide(unzip(B.f)).toString().replace(/([0]+981|\.[0]*981)/, "");
+			//console.log("I.multiply("+unzip(A.f)+").divide("+unzip(B.f)+").toString().replace(/([0]+981|\.[0]*981)/, '')");   <---debug
 		}
 		
 		$("#output").val(O.toString() + " " + B.s);

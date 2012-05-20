@@ -337,5 +337,13 @@
 		{"t":["exbibyte","exbibyte"],"s":"EiB","f":"1152921504606846976"},
 		{"t":["yobibyte","yobibyte"],"s":"YiB","f":"1208925819614629174706176"},
 		{"t":["zebibyte","zebibyte"],"s":"ZiB","f":"1180591620717411303424"},
-		{"t":["bit","bit"],"s":"b","f":"0.125"}
+		{"t":["bit","bit"],"s":"bit","f":"0.125"},
+		{"t":["kilobit","kilobit"],"s":"Kbit","f":"125"},
+		{"t":["megabit","megabit"],"s":"Mbit","f":"1.25e+5"},
+		{"t":["gigabit","gigabit"],"s":"Gbit","f":"1.25e+8"},
+		{"t":["terabit","terabit"],"s":"Tbit","f":"1.25e+11"},
+		{"t":["petabit","petabit"],"s":"Pbit","f":"1.25e+14"},
+		{"t":["exabit","exabit"],"s":"Ebit","f":"1.25e+17"},
+		{"t":["zettabit","zettabit"],"s":"Zbit","f":"1.25e+20"},
+		{"t":["yottabit","yottabit"],"s":"Ybit","f":"1.25e+23"}
 	]}
