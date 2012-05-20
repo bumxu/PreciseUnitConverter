@@ -318,4 +318,24 @@
 		{"t":["attocandela","attocandela"],"s":"acd","f":"1e-18"},
 		{"t":["zeptocandela","zeptocandela"],"s":"zcd","f":"1e-21"},
 		{"t":["yoctocandela","yoctocandela"],"s":"ycd","f":"1e-24"}
+	],"info":[
+		{"t":["byte (octet)","byte (octeto)"],"s":"B","f":"1"},
+		{"t":["nibble","nibble"],"s":"N","f":"0.5"},
+		{"t":["kilobyte","kilobyte"],"s":"kB","f":"1e+3"},
+		{"t":["megabyte","megabyte"],"s":"MB","f":"1e+6"},
+		{"t":["gigabyte","gigabyte"],"s":"GB","f":"1e+9"},
+		{"t":["terabyte","terabyte"],"s":"TB","f":"1e+12"},
+		{"t":["petabyte","petabyte"],"s":"PB","f":"1e+15"},
+		{"t":["exabyte","exabyte"],"s":"EB","f":"1e+18"},
+		{"t":["zattabyte","zattabyte"],"s":"ZB","f":"1e+21"},
+		{"t":["yottabyte","yottabyte"],"s":"YB","f":"1e+24"},
+		{"t":["kibibyte","kibibyte"],"s":"KiB","f":"1024"},
+		{"t":["mebibyte","mebibyte"],"s":"MiB","f":"1048576"},
+		{"t":["gibibyte","gibibyte"],"s":"GiB","f":"1073741824"},
+		{"t":["tebibyte","tebibyte"],"s":"TiB","f":"1099511627776"},
+		{"t":["pebibyte","pebibyte"],"s":"PiB","f":"1125899906842624"},
+		{"t":["exbibyte","exbibyte"],"s":"EiB","f":"1152921504606846976"},
+		{"t":["yobibyte","yobibyte"],"s":"YiB","f":"1208925819614629174706176"},
+		{"t":["zebibyte","zebibyte"],"s":"ZiB","f":"1180591620717411303424"},
+		{"t":["bit","bit"],"s":"b","f":"0.125"}
 	]}
