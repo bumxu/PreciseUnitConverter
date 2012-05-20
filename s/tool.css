@@ -3,10 +3,10 @@
 }
 #titulo {
 	top: 4%;
-	margin-top: 45px;
+	margin-top: 50px;
 	left: 38px;
 	position: absolute;
-	font-size: 28px;
+	font-size: 21px;
 	color: rgba(255,255,255,0.9);
 }
 #subtitulo {
@@ -63,7 +63,7 @@
 
 #unitedit {
 	position: absolute;
-	top: 100px;
+	top: 70px;
 	bottom: 30px;
 	right: 30px;
 	left: 320px;
@@ -88,16 +88,18 @@
 	width: 100px;
 	padding: 6px 14px;
 	margin-left: 5px;
-	margin-top: 60px !important;
+	margin-top: 40px !important;
 }
 #info{
 	width: 300px;
 	padding: 14px 14px;
 	margin-left: 60px;
+	margin-top: 60px !important;
 }
-#add, #exp{
+#add, #exp, #clone{
 	width: 100px;
 	padding: 6px 14px;
+	float: left;
 	margin-left: 5px;
 	margin-top: 5px !important;
 }

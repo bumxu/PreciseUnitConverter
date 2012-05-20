@@ -68,13 +68,17 @@ function unit() {
 		"id" : "add",
 		"onclick" : "add()"
 	}).appendTo("#unitedit");
+	$("<div/>").html("Clone").addClass("i-w-bot").attr({
+		"id" : "clone",
+		"onclick" : "clone()"
+	}).appendTo("#unitedit");
 	$("<div/>").html("Save file").addClass("i-w-bot").attr({
 		"id" : "exp",
 		"onclick" : "exp()"
 	}).appendTo("#unitedit");
 }
 
-function add() {
+function add(){
 	current = {
 		"typ" : ["new", "nuevo"], //FIXME
 		"sym" : "NEW",
@@ -85,9 +89,16 @@ function add() {
 	unit();
 }
 
+function clone(){
+	current = $.extend({}, current)
+	open = -1;
+	unit();
+}
+
 function save() {
 	$H$("save").hide();
 
+	current.typ = new Array();
 	for( i = 0; i < TYPS; i++)
 		current.typ[i] = $H$("in-typ" + i).val();
 	current.mag = $H$("in-mag").val();
@@ -122,9 +133,9 @@ function exp() {
 	});
 }
 
-var alternative = "{\n";
-
 function alt() {
+	alternative = "{\n";
+
 	families = $H$("unitlist").children("div");
 	for( i = 0; i < families.length; i++) {
 		family = families[i].id.substring(3);
