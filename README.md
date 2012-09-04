@@ -1,5 +1,10 @@
-UnitBeast
-=========
+PreciseUnitConverter
+====================
+
+Update:
+The application will receive updates later this year.
+
+-- 
 
 A unit converter free, quick, fast and intuitive.
 
